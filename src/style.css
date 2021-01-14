@@ -1,0 +1,35 @@
+html {
+  font-family: MathJax;
+  font-size: 1.2em;
+}
+
+p#error {
+  color: red;
+}
+
+.user_input {
+  margin: 15px 15px 55px 15px;
+  padding: 5px;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 600px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.square {
+  flex-grow: 1;
+  margin: 10px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 140px; /* don't ask */
+}

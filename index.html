@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Square Layout</title>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="src/style.css">
+<script type="text/javascript" src="src/index.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="user_input">
+  <label for="layout">Layout:</label>
+  <input type="text" id="layout" placeholder="4,3,2">
+  <input type="submit" value="Make" onClick="makeFigure()">
+  <p id="error"><br/></p>
+</div>
+
+<div id="main"></div>
+
+</body>
+</html>
