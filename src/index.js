@@ -6,6 +6,7 @@ function showErrorMessage() {
 }
 
 function clearErrorMessage() {
+    errorTag = document.getElementById("error");
     errorTag.textContent = "";
     errorTag.appendChild(document.createElement("br"));
 }
