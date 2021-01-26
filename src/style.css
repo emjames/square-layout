@@ -53,3 +53,16 @@ p#error {
   text-align: center;
   line-height: 140px; /* don't ask */
 }
+
+span {
+  background-color: white;
+  padding: 0.3em;
+}
+
+.none {}
+.staggered-square-pin-fin {}
+.in-line-square-pin-fin {}
+.in-line-circular-pin-fin {
+  background-image: url(./images/circle.svg);
+  background-size: 20px;
+}
