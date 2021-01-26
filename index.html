@@ -24,10 +24,21 @@ MathJax.Hub.Config({
 <body>
 <!-- partial:index.partial.html -->
 <div class="user_input">
-  <label for="layout">Layout:</label>
-  <input type="text" id="layout" placeholder="4,3,2">
-  <input type="submit" value="Make" onClick="makeFigure()">
+  <div>
+      <label for="layout">Layout:</label>
+      <input type="submit" value="Make" onClick="makeFigure()">
+  </div>
   <p id="error"><br/></p>
+  <textarea id="layout" placeholder="4,3,2" cols="40" rows="10">
+type,name,row,column
+7,staggered square pin fin,0,0
+7,staggered square pin fin,0,1
+6,in-line square pin fin,0,2
+4,in-line circular pin fin,1,0
+4,in-line circular pin fin,1,1
+0,none,1,2
+
+  </textarea>
 </div>
 
 <div id="main"></div>

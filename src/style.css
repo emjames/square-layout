@@ -3,8 +3,28 @@ html {
   font-size: 1.2em;
 }
 
+label,
+textarea {
+  letter-spacing: 1px;
+}
+
+textarea {
+  padding: 10px;
+  line-height: 1.5;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+input {
+  display: inline-block;
+  margin-bottom: 10px;
+}
 p#error {
   color: red;
+  margin: 0.3em;
 }
 
 .user_input {
