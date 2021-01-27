@@ -67,31 +67,44 @@ span {
 
 .none {}
 
-.in-line-strip-fin {
-  background-image: url(./images/inline_strip_fin.svg);
+/* The following letters are from Jonsson and Moshfegh's paper */
+/* A */
+.plate-fin {
+  background-image: url(./images/plain_fin.svg);
   background-size: 66%;
 }
 
+/* B */
+.in-line-strip-fin {
+  background-image: url(./images/inline_square_fin.svg);
+  background-size: 66%;
+}
+
+/* C */
 .staggered-strip-fin {
   background-image: url(./images/staggered_strip_fin.svg);
   background-size: 66%;
 }
 
+/* D */
 .in-line-circular-pin-fin {
   background-image: url(./images/inline_circular_fin.svg);
   background-size: 66%;
 }
 
+/* E */
 .staggered-circular-pin-fin {
   background-image: url(./images/staggered_circular.svg);
   background-size: 66%;
 }
 
+/* F */
 .in-line-square-pin-fin {
   background-image: url(./images/inline_square_fin.svg);
   background-size: 66%;
 }
 
+/* G */
 .staggered-square-pin-fin {
   background-image: url(./images/staggered_square_fin.svg);
   background-size: 66%;

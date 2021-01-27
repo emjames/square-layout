@@ -8,16 +8,6 @@
 // 0,none,1,2
 
 let main = null;
-const PATTERNS = {
-    'none': 0,
-    'plate fin heat sink': 1,
-    'strip fin heat sink': 2,
-    'staggered circular pin fin': 3,
-    'in-line circular pin fin': 4,
-    'staggered circular pin fin': 5,
-    'in-line square pin fin': 6,
-    'staggered square pin fin': 7,
-};
 
 function showErrorMessage() {
     errorTag = document.getElementById("error");
@@ -32,7 +22,6 @@ function clearErrorMessage() {
 
 function makeFigure() {
     const layoutText = document.getElementById("layout").value;
-    ///const layout = layoutText.split(",").map(num => parseInt(num));
 
     layout = parseLayout(layoutText);
 
@@ -87,9 +76,11 @@ function parseLayout(layout) {
     return parsedLines;
 }
 
-function createSquare(text, width, height, pattern=PATTERNS['none']) {
-    console.log("PATT: " + pattern);
+function createSquare(text, width, height, pattern='none') {
+    console.log("Row-Col: " + text);
+    console.log("Pattern: " + pattern);
     const square = document.createElement("div");
+    const innerSquare = document.createElement("div");
     const textSpan = document.createElement("span");
 
     textSpan.textContent = text;
@@ -97,8 +88,12 @@ function createSquare(text, width, height, pattern=PATTERNS['none']) {
     square.classList.add("square");
     square.style.width = width;
     square.style.height = height;
-    square.classList.add("in-line-circular-pin-fin");
-    square.appendChild(textSpan);
+
+    innerSquare.classList.add("inner")
+    innerSquare.classList.add(pattern);
+    innerSquare.appendChild(textSpan);
+
+    square.appendChild(innerSquare);
 
     return square;
 }
@@ -133,10 +128,10 @@ function createLayout(layout) {
             // Calculate the percentage for the height depending on the row(s) number
             squareHeight = 100 / maxRow - 10 + "%";
 
-            console.log("TYPE: ");
             // Filter the element that matches row column from the layout array
             const currElement = layout.filter(e => e.row == i-1 && e.column == j-1)[0];
-            const squarePattern = currElement.type;
+            // Replace spaces with dashes to match the CSS class
+            const squarePattern = currElement.name.replace(/\s/g, "-");
 
             newSquare = createSquare(squareText, squareWidth, squareHeight, squarePattern);
             main.appendChild(newSquare);
