@@ -124,7 +124,7 @@ function createLayout(layout) {
             squareText = "(" + i + "," + j + ")";
 
             // Calculate the percentage for the width depending on the columns number
-            squareWidth = 100 / maxCol - 10 + "%";
+            squareWidth = 100 / maxCol - 5 + "%";
             // Calculate the percentage for the height depending on the row(s) number
             squareHeight = 100 / maxRow - 10 + "%";
 
