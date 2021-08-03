@@ -62,17 +62,21 @@ function parseLayout(layout) {
             for (let j=0; j < specs.length; j++) {
                 let value = specs[j];
 
-                // Check if we need to convert the value to int
-                if (intIndex.includes(j)) {
-                    value = parseInt(value);
-                }
+                if (value != 'none') {
 
-                obj[lineKeys[j]] = value;
+                    // Check if we need to convert the value to int
+                    if (intIndex.includes(j)) {
+                        value = parseInt(value);
+                    }
+
+                    obj[lineKeys[j]] = value;
+                    }
             }
             parsedLines.push(obj);
         }
     }
 
+    console.log(parsedLines);
     return parsedLines;
 }
 
@@ -87,6 +91,9 @@ function createSquare(text, width, height, pattern='none') {
 
     square.classList.add("square");
     square.style.width = width;
+    // We want the square to maintain a "heat sink look"
+    square.style.maxHeight = '113px';
+    square.style.maxWidth = '145px';
     square.style.height = height;
 
     innerSquare.classList.add("inner")
