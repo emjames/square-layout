@@ -111,8 +111,26 @@ function clearMainSquare() {
     }
 }
 
+function appendFans() {
+    const fansParent = document.getElementById("fans");
+
+    console.log(fansParent);
+    for (i = 0; i < 8; i++) {
+        const fan = document.createElement("div");
+        fan.classList.add("fan");
+
+        const textSpan = document.createElement("span");
+        textSpan.textContent = "Fan";
+        fan.appendChild(textSpan);
+
+        fansParent.appendChild(fan);
+    }
+
+}
+
 function createLayout(layout) {
     clearMainSquare();
+    appendFans();
 
     // Find the max row in the array of objects (add once since we index from 0)
     const maxRow = layout.reduce((prev, curr) => {

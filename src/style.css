@@ -42,8 +42,8 @@ p#error {
   width: 500px;
   height: 600px;
   border: 1px solid black;
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 10px 0px 10px;
+  padding: 10px 10px 60px 10px;
 }
 
 .square {
@@ -108,4 +108,17 @@ span {
 .staggered-square-pin-fin {
   background-image: url(./images/staggered_square_fin.svg);
   background-size: 50%;
+}
+
+#fans {
+    padding: 0 10px 10px 10px;
+    display: flex;
+}
+
+.fan {
+    width: 63.3px;
+    height: 100px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 110px;
 }
