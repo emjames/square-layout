@@ -62,27 +62,21 @@ function parseLayout(layout) {
             for (let j=0; j < specs.length; j++) {
                 let value = specs[j];
 
-                if (value != 'none') {
+                // Check if we need to convert the value to int
+                if (intIndex.includes(j)) {
+                    value = parseInt(value);
+                }
 
-                    // Check if we need to convert the value to int
-                    if (intIndex.includes(j)) {
-                        value = parseInt(value);
-                    }
-
-                    obj[lineKeys[j]] = value;
-                    }
+                obj[lineKeys[j]] = value;
             }
             parsedLines.push(obj);
         }
     }
 
-    console.log(parsedLines);
     return parsedLines;
 }
 
 function createSquare(text, width, height, pattern='none') {
-    console.log("Row-Col: " + text);
-    console.log("Pattern: " + pattern);
     const square = document.createElement("div");
     const innerSquare = document.createElement("div");
     const textSpan = document.createElement("span");
@@ -114,7 +108,6 @@ function clearMainSquare() {
 function appendFans() {
     const fansParent = document.getElementById("fans");
 
-    console.log(fansParent);
     for (i = 0; i < 8; i++) {
         const fan = document.createElement("div");
         fan.classList.add("fan");
@@ -130,7 +123,6 @@ function appendFans() {
 
 function createLayout(layout) {
     clearMainSquare();
-    appendFans();
 
     // Find the max row in the array of objects (add once since we index from 0)
     const maxRow = layout.reduce((prev, curr) => {
@@ -158,8 +150,10 @@ function createLayout(layout) {
             // Replace spaces with dashes to match the CSS class
             const squarePattern = currElement.name.replace(/\s/g, "-");
 
-            newSquare = createSquare(squareText, squareWidth, squareHeight, squarePattern);
-            main.appendChild(newSquare);
+            if (currElement['type'] != 0) {
+                newSquare = createSquare(squareText, squareWidth, squareHeight, squarePattern);
+                main.appendChild(newSquare);
+            }
         }
     }
 }
@@ -174,4 +168,5 @@ function saveImage () {
 
 document.addEventListener("DOMContentLoaded", () => {
     main = document.getElementById("main");
+    appendFans();
 });
