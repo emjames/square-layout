@@ -71,43 +71,43 @@ span {
 /* A */
 .plate-fin {
   background-image: url(./images/plain_fin.svg);
-  background-size: 50%;
+  background-size: 71%;
 }
 
 /* B */
 .in-line-strip-fin {
   background-image: url(./images/inline_strip_fin.svg);
-  background-size: 50%;
+  background-size: 71%;
 }
 
 /* C */
 .staggered-strip-fin {
   background-image: url(./images/staggered_strip_fin.svg);
-  background-size: 50%;
+  background-size: 71%;
 }
 
 /* D */
 .in-line-circular-pin-fin {
   background-image: url(./images/inline_circular_fin.svg);
-  background-size: 50%;
+  background-size: 71%;
 }
 
 /* E */
 .staggered-circular-pin-fin {
   background-image: url(./images/staggered_circular.svg);
-  background-size: 50%;
+  background-size: 71%;
 }
 
 /* F */
 .in-line-square-pin-fin {
   background-image: url(./images/inline_square_fin.svg);
-  background-size: 50%;
+  background-size: 71%;
 }
 
 /* G */
 .staggered-square-pin-fin {
   background-image: url(./images/staggered_square_fin.svg);
-  background-size: 50%;
+  background-size: 71%;
 }
 
 #fans {
@@ -116,9 +116,18 @@ span {
 }
 
 .fan {
-    width: 63.3px;
+    width: 64.1px;
     height: 100px;
-    border: 1px solid black;
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: black;
     text-align: center;
     line-height: 110px;
+}
+
+.fan:nth-child(1n) {
+    border-width: 0px 0px 1px 1px;
+}
+.fan:nth-child(8n) {
+    border-width: 0px 1px 1px 1px;
 }

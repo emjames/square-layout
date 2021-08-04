@@ -164,6 +164,14 @@ function createLayout(layout) {
     }
 }
 
+function saveImage () {
+    const imageElements = document.getElementById("image-selection");
+
+    html2canvas(imageElements, { scale: 3 }).then(function (canvas) {
+        document.body.appendChild(canvas);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     main = document.getElementById("main");
 });
